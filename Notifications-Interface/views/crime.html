@@ -49,8 +49,16 @@
 
         <div class="notifications">
 
+            <select name="operations" id="slt_operations" class="selection" size="5">
+                <option value=""> - Select Function - </option>
+                <option value="1">COUNT</option>
+                <option value="2">SUM</option>
+                <option value="3">MEAN</option>
+                <option value="4">VARIANCE</option>
+            </select>
+            
             <select name="cols" id="slt_cols" class="selection" size="9">
-                <option value=""> - Select - </option>
+                <option value=""> - Select Attribute - </option>
                 <option value="1">CrimeDate</option>
                 <option value="2">CrimeCode</option>
                 <option value="3">CrimeTime</option>
@@ -61,19 +69,19 @@
                 <option value="8">District</option>
                 <option value="9">Neighborhood</option>
             </select>
-
-            <select name="operations" id="slt_operations" class="selection" size="5">
-                <option value=""> - Select - </option>
-                <option value="2">COUNT</option>
-                <option value="1">SUM</option>
-                <option value="3">MEAN</option>
-                <option value="4">VARIANCE</option>
+            
+            <select name="operators" id="slt_operators" class="selection" size="5">
+                <option value=""> - Select Operator - </option>
+                <option value="1">EQUAL</option>
+                <option value="2">GT EQ</option>
+                <option value="3">LT EQ</option>
+                <option value="4">NOT EQ</option>
             </select>
 
-            <input name="value" id="txt_value" class="value" maxlength="10" size="10">
+            <input name="value" type="text" id="txt_value" class="value" maxlength="10" size="10">
 
             <select id="feedback" multiple="multiple" class="selection">
-                <option value=""> - Select - </option>
+                <option value=""> - Select Feedback - </option>
                 <option value="m1">CrimeDate</option>
                 <option value="m2">CrimeCode</option>
                 <option value="m3">CrimeTime</option>
