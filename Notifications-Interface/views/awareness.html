@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <title>Awareness</title>
+    <link rel="shortcut icon" href="images/icon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/mui.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <link rel="stylesheet" href="css/d3.parcoords.css" />
+    <link rel="stylesheet" type="text/css" href="css/opensans.css" />
+    <link rel="stylesheet" href="css/material.min.css">
+    <link rel="stylesheet" href="css/icon.css">
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script src="js/material.min.js"></script>
+    
+    <script src="js/firebase.js"></script>
+    <script src="js/underscore.js"></script>
+    <script src="js/underscore.math.js"></script>
+    <script src="polychrome/polychrome-fb.js"></script>
+
+    <script src="js/sylvester.js"></script>
+    <script src="js/d3.v3.min.js"></script>
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/lasso.js"></script>
+
+    <script src="js/d3.parcoords.js"></script>
+    <!--    <script src="js/ga/ga-parallel-bundled.js"></script>-->
+    <script src="js/ga/ga-scatterplot.js"></script>
+    <script src="js/ga/ga-parallel.js"></script>
+    <script src="js/ga/ga-barycentric.js"></script>
+    <script src="js/ga/ga-awareness.js"></script>
+
+    <ul class="mui-tabs__bar mui-tabs__bar--justified">
+        <li class="mui--is-active">
+            <a class="tabs_pane" data-mui-toggle="tab" data-mui-controls="content-parallel">Parallel Coordinates</a>
+        </li>
+        <li>
+            <a class="tabs_pane" data-mui-toggle="tab" data-mui-controls="content-scatterplot">ScatterPlot</a>
+        </li>
+    </ul>
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="settings">Change Dimensions</button>
+    <div class="mui-tabs__pane mui--is-active" id="content-parallel"></div>
+    <div class="mui-tabs__pane" id="content-scatterplot"></div>
+
+    <dialog class="mdl-dialog" id="dimensionsDialog">
+        <div class="mdl-dialog__content" id="dimensionsDialogContent">
+            
+
+        </div>
+        <div class="mdl-dialog__actions">
+            <button type="button" class="mdl-button" id="dimensionsChanged">Done</button>
+            <button type="button" class="mdl-button close">Cancel</button>
+        </div>
+    </dialog>
+
+</body>
+
+</html>
