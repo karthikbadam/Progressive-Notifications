@@ -19,7 +19,7 @@ var ObjectId = require('mongodb').ObjectID;
 
 // connect to the flights database in mongodb
 var mongourlMovies = 'mongodb://127.0.0.1:27017/movies';
-var mongourlCrime = 'mongodb://127.0.0.1:27017/crime';
+var mongourlCrime = 'mongodb://127.0.0.1:27017/crime_big';
 
 var app = express();
 
@@ -105,7 +105,7 @@ var parseTime = d3.time.format("%H:%M:%S").parse;
 var parseTime2 = d3.time.format("%H%M").parse;
 var parseTime3 = d3.time.format("%H").parse;
 
-var crimeStream = fs.createReadStream("public/data/crime.csv");
+var crimeStream = fs.createReadStream("public/data/crime2.csv");
 
 MongoClient.connect(mongourlMovies, function (err, db) {
     assert.equal(null, err);
@@ -159,6 +159,15 @@ function initializeCrime(db, callback) {
         .on("data", function (d) {
 
             var temp = {};
+            
+            if (parseDate(d[crimeMeta["date"]]) == null) {
+                return; 
+            }
+            
+            if (d[crimeMeta["location"]] == "") {
+                return; 
+            }
+                
             temp[crimeMeta["id"]] = i;
             temp[crimeMeta["date"]] = parseDate(d[crimeMeta["date"]]).toISOString();
             temp[crimeMeta["time"]] = d[crimeMeta["time"]];
