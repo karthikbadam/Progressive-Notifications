@@ -56,7 +56,7 @@
                 <option value="3">MEAN</option>
                 <option value="4">VARIANCE</option>
             </select>
-            
+
             <select name="cols" id="slt_cols" class="selection" size="9">
                 <option value=""> - Select Attribute - </option>
                 <option value="1">CrimeDate</option>
@@ -69,7 +69,7 @@
                 <option value="8">District</option>
                 <option value="9">Neighborhood</option>
             </select>
-            
+
             <select name="operators" id="slt_operators" class="selection" size="5">
                 <option value=""> - Select Operator - </option>
                 <option value="1">EQUAL</option>
@@ -78,7 +78,21 @@
                 <option value="4">NOT EQ</option>
             </select>
 
-            <input name="value" type="text" id="txt_value" class="value" maxlength="10" size="10">
+            <script type="text/javascript">
+                function ClearPlaceHolder(input) {
+                    if (input.value == input.defaultValue) {
+                        input.value = "";
+                    }
+                }
+
+                function SetPlaceHolder(input) {
+                    if (input.value == "") {
+                        input.value = input.defaultValue;
+                    }
+                }
+            </script>
+            
+            <input type="text" value="- Enter Value -" onfocus="ClearPlaceHolder (this)" onblur="SetPlaceHolder (this)" name="value" id="txt_value" class="value" maxlength="10" size="10" /> 
 
             <select id="feedback" multiple="multiple" class="selection">
                 <option value=""> - Select Feedback - </option>
@@ -96,7 +110,7 @@
         </div>
 
     </div>
-    
+
     <script src="js/jquery.multi-select.js" type="text/javascript"></script>
 
 </body>
